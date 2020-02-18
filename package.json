@@ -7,7 +7,14 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "cypress open"
+    "test-headless": "ng test --watch=false --browsers=ChromeHeadless",
+    "cypress:open": "cypress open",
+    "build:prod": "ng build --prod",
+    "start:prod": "http-server ./dist/task-manager -p 4200",
+    "cypress:run": "cypress run",
+    "cypress:ci": "run-p --race start:ci cypress:run",
+    "start:ci": "http-server ./dist/cypressTest -a localhost -p 8000 -c-1",
+    "e2e": "start-server-and-test start:prod http://localhost:4200 cypress:run"
   },
   "private": true,
   "dependencies": {
