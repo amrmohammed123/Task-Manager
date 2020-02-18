@@ -6,7 +6,6 @@ branches:
     - master
 before_script:
   - npm install -g @angular/cli
-  - npm install -g npm-run-all start-server-and-test
 script:
   - npm install
   - npm run test-headless
